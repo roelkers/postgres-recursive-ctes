@@ -1,0 +1,8 @@
+FROM node:alpine
+WORKDIR '/app'
+COPY ./package.json ./
+COPY ./nodemon.json ./
+RUN yarn
+RUN yarn global add ts-node 
+COPY . .
+CMD ["yarn", "run", "dev"]
